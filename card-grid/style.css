@@ -1,0 +1,6 @@
+body { background: #181818; color: #fff; font-family: Arial, sans-serif; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 600px; margin: 4rem auto; }
+.card { background: #222; padding: 2rem; border-radius: 1rem; box-shadow: 0 0 10px #0ff; cursor: pointer; font-size: 1.2rem; transition: 0.2s; text-align: center; }
+.card:hover { background: #0ff; color: #222; }
+#popup { position: fixed; top: 30%; left: 50%; transform: translate(-50%, 0); background: #fff; color: #222; padding: 2rem; border-radius: 1rem; box-shadow: 0 0 20px #0ff; min-width: 300px; z-index: 10; display: none; }
+.close-btn { float: right; cursor: pointer; color: #f00; font-weight: bold; }

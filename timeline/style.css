@@ -1,0 +1,5 @@
+body { background: #181818; color: #fff; font-family: Arial, sans-serif; }
+.timeline { margin: 4rem auto; max-width: 500px; border-left: 3px solid #0ff; padding-left: 2rem; }
+.event { margin-bottom: 2rem; position: relative; }
+.date { font-weight: bold; color: #0ff; margin-bottom: 0.5rem; }
+.desc { background: #222; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 0 10px #0ff; }

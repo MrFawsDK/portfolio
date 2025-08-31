@@ -1,0 +1,13 @@
+body { font-family: Arial, sans-serif; background: #181818; color: #fff; margin: 0; }
+header { text-align: center; margin-top: 2rem; }
+.styles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 3rem auto; }
+.style-card { background: #222; border-radius: 1rem; box-shadow: 0 0 20px #0ff; padding: 2rem; text-align: center; transition: 0.2s; position: relative; }
+.style-card img { width: 50px; margin-bottom: 1rem; filter: drop-shadow(0 0 10px #0ff); }
+.style-card h2 { color: #0ff; margin: 0.5rem 0; }
+.style-card p { margin-bottom: 1.5rem; }
+.style-btn { background: #0ff; color: #222; padding: 1rem 2rem; border-radius: 1rem; text-decoration: none; font-size: 1.1rem; box-shadow: 0 0 10px #0ff; transition: 0.2s; display: inline-block; }
+.style-btn:hover { background: #222; color: #0ff; box-shadow: 0 0 20px #0ff; }
+.features { background: #222; color: #0ff; max-width: 600px; margin: 3rem auto 2rem auto; border-radius: 1rem; box-shadow: 0 0 20px #0ff; padding: 2rem; }
+.features h2 { margin-top: 0; }
+.features ul { list-style: none; padding: 0; }
+.features li { margin-bottom: 0.7rem; font-size: 1.1rem; }

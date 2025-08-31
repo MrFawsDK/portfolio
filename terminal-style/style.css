@@ -1,0 +1,12 @@
+body { background: #181818; color: #00ff00; font-family: 'Fira Mono', monospace; }
+#terminal { max-width: 600px; margin: 5rem auto; background: #222; border-radius: 8px; box-shadow: 0 0 20px #00ff00; padding: 2rem; }
+.input-line { display: flex; align-items: center; margin-top: 1rem; }
+.input-line span { margin-right: 0.5rem; }
+#terminal-input { background: #181818; color: #00ff00; border: none; outline: none; font-size: 1.2rem; width: 80%; }
+.cmd { color: #0ff; font-weight: bold; }
+#cv-btn { background: #0ff; color: #222; border: none; padding: 0.5rem 1.2rem; border-radius: 0.5rem; font-weight: bold; margin-bottom: 1rem; cursor: pointer; box-shadow: 0 0 10px #0ff; }
+#cv-btn:hover { background: #222; color: #0ff; }
+#skills { margin-top: 1rem; }
+.skill { display: flex; align-items: center; margin-bottom: 0.5rem; }
+.skill span { width: 60px; }
+.bar { height: 12px; background: #0ff; border-radius: 6px; box-shadow: 0 0 10px #0ff; }

@@ -1,0 +1,6 @@
+body { background: #181818; color: #fff; font-family: Arial, sans-serif; transition: background 0.5s, color 0.5s; }
+.neon-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 600px; margin: 4rem auto; }
+.neon-box { background: #222; color: #0ff; padding: 2rem; border-radius: 1rem; box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset; font-size: 1.3rem; text-align: center; transition: 0.2s; }
+.neon-box:hover { box-shadow: 0 0 40px #0ff, 0 0 80px #0ff inset; color: #fff; background: #0ff; }
+body.light { background: #fff; color: #222; }
+body.light .neon-box { background: #eee; color: #09f; box-shadow: 0 0 20px #09f, 0 0 40px #09f inset; }
