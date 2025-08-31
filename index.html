@@ -6,57 +6,48 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Portfolio Universe</h1>
-    <p>Vælg din favorit portfolio-style og oplev forskellige måder at præsentere dig selv på!</p>
-  </header>
-  <div class="styles-grid">
-    <div class="style-card">
-      <img src="https://img.icons8.com/ios-filled/50/00ff00/console.png" alt="Terminal" />
-      <h2>Terminal Style</h2>
-      <p>CLI look, skriv kommandoer som <b>about</b>, <b>projects</b>, <b>contact</b>.</p>
-      <a href="terminal-style/index.html" class="style-btn">Prøv Terminal</a>
-    </div>
-    <div class="style-card">
-      <img src="https://img.icons8.com/ios-filled/50/0ff/monitor.png" alt="Desktop" />
-      <h2>OS/Desktop</h2>
-      <p>Din side ligner et computerskrivebord med ikoner og vinduer.</p>
-      <a href="os-desktop/index.html" class="style-btn">Prøv Desktop</a>
-    </div>
-    <div class="style-card">
-      <img src="https://img.icons8.com/ios-filled/50/0ff/timeline.png" alt="Timeline" />
-      <h2>Timeline</h2>
-      <p>Vertikal tidslinje med milepæle og projekter.</p>
-      <a href="timeline/index.html" class="style-btn">Prøv Timeline</a>
-    </div>
-    <div class="style-card">
-      <img src="https://img.icons8.com/ios-filled/50/0ff/grid.png" alt="Card Grid" />
-      <h2>Card Grid</h2>
-      <p>Kort med projekter og skills, klik for detaljer.</p>
-      <a href="card-grid/index.html" class="style-btn">Prøv Card Grid</a>
-    </div>
-    <div class="style-card">
-      <img src="https://img.icons8.com/ios-filled/50/0ff/story.png" alt="Storytelling" />
-      <h2>Storytelling</h2>
-      <p>Scroll gennem din historie, kapitel for kapitel.</p>
-      <a href="storytelling/index.html" class="style-btn">Prøv Storytelling</a>
-    </div>
-    <div class="style-card">
-      <img src="https://img.icons8.com/fluency/48/000000/source-code.png" alt="VS Code" />
-      <h2>VS Code / Discord Style</h2>
-      <p>Mørkt, clean og moderne design med sidebar og cards.</p>
-      <a href="minimal-dark-neon/index.html" class="style-btn">Prøv VS Code Style</a>
-    </div>
-  </div>
-  <section class="features">
-    <h2>Unikke Features</h2>
-    <ul>
-      <li>Dark / Light Mode toggle</li>
-      <li>3D animation (Three.js)</li>
-      <li>Download CV-knap</li>
-      <li>Interactive skills bar</li>
-      <li>Easter eggs (Konami code)</li>
-    </ul>
-  </section>
+  <main class="new-theme">
+    <header class="main-header">
+      <img src="https://avatars.githubusercontent.com/u/9919?s=80" alt="Profil" class="main-profile" />
+      <div>
+        <h1>MrFawsDK</h1>
+        <p>Webudvikler & designer med fokus på moderne, interaktive løsninger.</p>
+      </div>
+    </header>
+    <section class="projects-section">
+      <h2>Mine Projekter</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Portfolio Universe</h3>
+          <p>Samling af forskellige portfolio-styles – fra terminal til timeline.</p>
+          <a href="#styles" class="project-btn">Se styles</a>
+        </div>
+        <div class="project-card">
+          <h3>Blog Platform</h3>
+          <p>Moderne blog med dynamisk indhold og flot design.</p>
+        </div>
+        <div class="project-card">
+          <h3>Spil & Webapps</h3>
+          <p>Interaktive spil og webapplikationer med JS og PHP.</p>
+        </div>
+      </div>
+    </section>
+    <section class="contact-section">
+      <h2>Kontakt</h2>
+      <p>Du kan kontakte mig på <a href="mailto:email@eksempel.dk">email@eksempel.dk</a></p>
+      <button class="cv-btn" onclick="window.open('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf')">Download CV</button>
+    </section>
+    <section class="styles-section" id="styles">
+      <h2>Portfolio Styles</h2>
+      <div class="styles-grid">
+        <a href="terminal-style/index.html" class="style-link">Terminal</a>
+        <a href="os-desktop/index.html" class="style-link">Desktop</a>
+        <a href="timeline/index.html" class="style-link">Timeline</a>
+        <a href="card-grid/index.html" class="style-link">Card Grid</a>
+        <a href="storytelling/index.html" class="style-link">Storytelling</a>
+        <a href="minimal-dark-neon/index.html" class="style-link">VS Code Style</a>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

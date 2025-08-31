@@ -1,11 +1,14 @@
-body { background: #181818; color: #fff; font-family: Arial, sans-serif; }
-.timeline { margin: 4rem auto; max-width: 500px; border-left: 3px solid #0ff; padding-left: 2rem; }
-.event { margin-bottom: 2rem; position: relative; }
-.date { font-weight: bold; color: #0ff; margin-bottom: 0.5rem; }
-.desc { background: #222; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 0 10px #0ff; }
-#skills-bar { max-width: 400px; margin: 3rem auto; background: #333; border-radius: 1rem; box-shadow: 0 0 10px #0ff; padding: 1rem; }
-.skill { display: flex; align-items: center; margin-bottom: 0.5rem; }
-.skill span { width: 60px; color: #0ff; }
-.bar { height: 12px; background: #0ff; border-radius: 6px; box-shadow: 0 0 10px #0ff; }
-#cv-btn { background: #0ff; color: #222; border: none; padding: 0.5rem 1.2rem; border-radius: 0.5rem; font-weight: bold; margin: 2rem auto 0 auto; cursor: pointer; box-shadow: 0 0 10px #0ff; display: block; }
-#cv-btn:hover { background: #222; color: #0ff; }
+body { background: linear-gradient(135deg, #0d1421, #1a1a2e); color: #e4e6ea; font-family: Arial, sans-serif; min-height: 100vh; padding: 2rem; }
+h1 { text-align: center; color: #a78bfa; font-size: 2.5rem; margin-bottom: 3rem; font-weight: 600; }
+.timeline { margin: 4rem auto; max-width: 600px; border-left: 4px solid #6366f1; padding-left: 3rem; position: relative; }
+.timeline::before { content: ''; position: absolute; left: -8px; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #6366f1, #8b5cf6); }
+.event { margin-bottom: 3rem; position: relative; }
+.event::before { content: ''; position: absolute; left: -3rem; top: 0.5rem; width: 1rem; height: 1rem; background: #6366f1; border-radius: 50%; box-shadow: 0 0 10px rgba(99, 102, 241, 0.5); }
+.date { font-weight: bold; color: #a78bfa; margin-bottom: 0.8rem; font-size: 1.2rem; }
+.desc { background: linear-gradient(135deg, #1f2937, #374151); padding: 1.5rem; border-radius: 1rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1); border: 1px solid rgba(100, 116, 139, 0.2); }
+#skills-bar { max-width: 450px; margin: 3rem auto; background: linear-gradient(135deg, #1f2937, #374151); border-radius: 1.5rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1); padding: 2rem; border: 1px solid rgba(100, 116, 139, 0.2); }
+.skill { display: flex; align-items: center; margin-bottom: 0.8rem; }
+.skill span { width: 80px; color: #a78bfa; font-weight: 500; }
+.bar { height: 12px; background: linear-gradient(135deg, #6366f1, #8b5cf6); border-radius: 6px; box-shadow: 0 0 10px rgba(99, 102, 241, 0.3); }
+#cv-btn { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff; border: none; padding: 0.8rem 1.5rem; border-radius: 0.8rem; font-weight: 500; margin: 2rem auto 0 auto; cursor: pointer; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3); display: block; transition: 0.3s; }
+#cv-btn:hover { background: linear-gradient(135deg, #8b5cf6, #a78bfa); transform: translateY(-2px); }

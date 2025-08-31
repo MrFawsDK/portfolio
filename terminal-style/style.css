@@ -1,12 +1,12 @@
-body { background: #181818; color: #00ff00; font-family: 'Fira Mono', monospace; }
-#terminal { max-width: 600px; margin: 5rem auto; background: #222; border-radius: 8px; box-shadow: 0 0 20px #00ff00; padding: 2rem; }
+body { background: linear-gradient(135deg, #0d1421, #1a1a2e); color: #e4e6ea; font-family: 'Fira Mono', monospace; min-height: 100vh; }
+#terminal { max-width: 700px; margin: 5rem auto; background: linear-gradient(135deg, #1f2937, #374151); border-radius: 1.5rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1); padding: 2.5rem; border: 1px solid rgba(100, 116, 139, 0.2); }
 .input-line { display: flex; align-items: center; margin-top: 1rem; }
-.input-line span { margin-right: 0.5rem; }
-#terminal-input { background: #181818; color: #00ff00; border: none; outline: none; font-size: 1.2rem; width: 80%; }
-.cmd { color: #0ff; font-weight: bold; }
-#cv-btn { background: #0ff; color: #222; border: none; padding: 0.5rem 1.2rem; border-radius: 0.5rem; font-weight: bold; margin-bottom: 1rem; cursor: pointer; box-shadow: 0 0 10px #0ff; }
-#cv-btn:hover { background: #222; color: #0ff; }
-#skills { margin-top: 1rem; }
-.skill { display: flex; align-items: center; margin-bottom: 0.5rem; }
-.skill span { width: 60px; }
-.bar { height: 12px; background: #0ff; border-radius: 6px; box-shadow: 0 0 10px #0ff; }
+.input-line span { margin-right: 0.5rem; color: #a78bfa; }
+#terminal-input { background: #0d1421; color: #e4e6ea; border: none; outline: none; font-size: 1.2rem; width: 80%; border-radius: 0.5rem; padding: 0.5rem; }
+.cmd { color: #6366f1; font-weight: bold; }
+#cv-btn { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff; border: none; padding: 0.8rem 1.5rem; border-radius: 0.8rem; font-weight: 500; margin-bottom: 1rem; cursor: pointer; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3); transition: 0.3s; }
+#cv-btn:hover { background: linear-gradient(135deg, #8b5cf6, #a78bfa); transform: translateY(-2px); }
+#skills { margin-top: 1.5rem; }
+.skill { display: flex; align-items: center; margin-bottom: 0.8rem; }
+.skill span { width: 80px; color: #a78bfa; font-weight: 500; }
+.bar { height: 12px; background: linear-gradient(135deg, #6366f1, #8b5cf6); border-radius: 6px; box-shadow: 0 0 10px rgba(99, 102, 241, 0.3); }
