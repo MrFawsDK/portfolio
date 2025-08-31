@@ -1,6 +1,16 @@
-body { background: #181818; color: #fff; font-family: Arial, sans-serif; transition: background 0.5s, color 0.5s; }
-.neon-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 600px; margin: 4rem auto; }
-.neon-box { background: #222; color: #0ff; padding: 2rem; border-radius: 1rem; box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset; font-size: 1.3rem; text-align: center; transition: 0.2s; }
-.neon-box:hover { box-shadow: 0 0 40px #0ff, 0 0 80px #0ff inset; color: #fff; background: #0ff; }
-body.light { background: #fff; color: #222; }
-body.light .neon-box { background: #eee; color: #09f; box-shadow: 0 0 20px #09f, 0 0 40px #09f inset; }
+body { background: #1e1e2f; color: #d4d7dc; font-family: 'Segoe UI', 'Arial', sans-serif; margin: 0; }
+#sidebar { position: fixed; left: 0; top: 0; width: 70px; height: 100vh; background: #23272e; display: flex; flex-direction: column; align-items: center; padding-top: 1rem; box-shadow: 2px 0 8px #0004; z-index: 10; }
+#sidebar img { width: 40px; margin-bottom: 2rem; }
+#sidebar .side-btn { background: none; border: none; color: #7289da; font-size: 2rem; margin: 1rem 0; cursor: pointer; transition: color 0.2s; }
+#sidebar .side-btn:hover { color: #5865f2; }
+#main-content { margin-left: 90px; padding: 2rem; }
+#card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; max-width: 900px; margin: 2rem auto; }
+.card { background: #23272e; color: #d4d7dc; border-radius: 1rem; box-shadow: 0 2px 8px #0006; padding: 2rem; transition: 0.2s; border: 1px solid #333; text-align: left; }
+.card:hover { background: #282c34; box-shadow: 0 4px 16px #000a; }
+#skills-bar { max-width: 400px; margin: 3rem auto; background: #23272e; border-radius: 1rem; box-shadow: 0 0 10px #23272e; padding: 1rem; }
+.skill { display: flex; align-items: center; margin-bottom: 0.5rem; }
+.skill span { width: 60px; color: #7289da; }
+.bar { height: 12px; background: linear-gradient(90deg,#5865f2,#7289da); border-radius: 6px; box-shadow: 0 0 10px #23272e; }
+#cv-btn { background: #5865f2; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 0.5rem; font-weight: bold; margin: 2rem auto 0 auto; cursor: pointer; box-shadow: 0 0 10px #23272e; display: block; }
+#cv-btn:hover { background: #7289da; color: #fff; }
+h1 { color: #5865f2; }

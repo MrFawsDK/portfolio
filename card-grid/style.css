@@ -4,3 +4,9 @@ body { background: #181818; color: #fff; font-family: Arial, sans-serif; }
 .card:hover { background: #0ff; color: #222; }
 #popup { position: fixed; top: 30%; left: 50%; transform: translate(-50%, 0); background: #fff; color: #222; padding: 2rem; border-radius: 1rem; box-shadow: 0 0 20px #0ff; min-width: 300px; z-index: 10; display: none; }
 .close-btn { float: right; cursor: pointer; color: #f00; font-weight: bold; }
+#skills-bar { max-width: 400px; margin: 3rem auto; background: #333; border-radius: 1rem; box-shadow: 0 0 10px #0ff; padding: 1rem; }
+.skill { display: flex; align-items: center; margin-bottom: 0.5rem; }
+.skill span { width: 60px; color: #0ff; }
+.bar { height: 12px; background: #0ff; border-radius: 6px; box-shadow: 0 0 10px #0ff; }
+#cv-btn { background: #0ff; color: #222; border: none; padding: 0.5rem 1.2rem; border-radius: 0.5rem; font-weight: bold; margin: 2rem auto 0 auto; cursor: pointer; box-shadow: 0 0 10px #0ff; display: block; }
+#cv-btn:hover { background: #222; color: #0ff; }

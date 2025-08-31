@@ -8,3 +8,10 @@ window.addEventListener('scroll', function() {
     }
   });
 });
+// Download CV
+document.getElementById('cv-btn').onclick = function() {
+  const link = document.createElement('a');
+  link.href = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
+  link.download = 'CV.pdf';
+  link.click();
+};

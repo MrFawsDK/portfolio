@@ -10,3 +10,21 @@ function openCard(name) {
 function closeCard() {
   document.getElementById('popup').style.display = 'none';
 }
+// Download CV
+document.getElementById('cv-btn').onclick = function() {
+  const link = document.createElement('a');
+  link.href = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
+  link.download = 'CV.pdf';
+  link.click();
+};
+// Konami code easter egg
+let konami = [];
+const secret = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
+window.addEventListener('keydown', function(e) {
+  konami.push(e.key);
+  if (konami.length > secret.length) konami.shift();
+  if (konami.join('').toLowerCase() === secret.join('').toLowerCase()) {
+    alert('🎉 Du fandt et easter egg!');
+    konami = [];
+  }
+});

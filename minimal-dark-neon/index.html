@@ -6,14 +6,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Projekter</h1>
-  <div class="neon-grid">
-    <div class="neon-box">Portfolio</div>
-    <div class="neon-box">Blog</div>
-    <div class="neon-box">Spil</div>
-    <div class="neon-box">Web</div>
+  <div id="sidebar">
+    <img src="https://img.icons8.com/fluency/48/000000/source-code.png" alt="logo" />
+    <button class="side-btn" title="Portfolio" onclick="showCard(0)">&#128196;</button>
+    <button class="side-btn" title="Blog" onclick="showCard(1)">&#128221;</button>
+    <button class="side-btn" title="Spil" onclick="showCard(2)">&#127918;</button>
+    <button class="side-btn" title="Web" onclick="showCard(3)">&#128187;</button>
   </div>
-  <button id="toggle-mode">Toggle Dark/Light</button>
+  <div id="main-content">
+    <h1>VS Code / Discord Portfolio</h1>
+    <div id="card-grid">
+      <div class="card"> <h2>Portfolio</h2> <p>Mit portfolio-projekt med HTML, CSS, JS og PHP.</p> </div>
+      <div class="card"> <h2>Blog</h2> <p>Min blog-platform med dynamisk indhold.</p> </div>
+      <div class="card"> <h2>Spil</h2> <p>Spil udviklet i JavaScript.</p> </div>
+      <div class="card"> <h2>Web</h2> <p>Webprojekter og webapps.</p> </div>
+    </div>
+    <div id="skills-bar">
+      <b>Skills:</b>
+      <div class="skill"><span>HTML</span><div class="bar" style="width:90%"></div></div>
+      <div class="skill"><span>CSS</span><div class="bar" style="width:80%"></div></div>
+      <div class="skill"><span>JS</span><div class="bar" style="width:75%"></div></div>
+      <div class="skill"><span>PHP</span><div class="bar" style="width:70%"></div></div>
+    </div>
+    <button id="cv-btn">Download CV (PDF)</button>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
