@@ -2,52 +2,362 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio Styles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MrFawsDK - Webudvikler & Designer</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <main class="new-theme">
-    <header class="main-header">
-      <img src="https://avatars.githubusercontent.com/u/9919?s=80" alt="Profil" class="main-profile" />
-      <div>
-        <h1>MrFawsDK</h1>
-        <p>Webudvikler & designer med fokus på moderne, interaktive løsninger.</p>
+  <div class="cursor-trail"></div>
+  
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">MrFaws<span class="logo-accent">DK</span></span>
       </div>
-    </header>
-    <section class="projects-section">
-      <h2>Mine Projekter</h2>
+      <ul class="nav-menu">
+        <li><a href="#hero" class="nav-link">Hjem</a></li>
+        <li><a href="#about" class="nav-link">Om mig</a></li>
+        <li><a href="#projects" class="nav-link">Projekter</a></li>
+        <li><a href="#portfolio-styles" class="nav-link">Portfolio Styles</a></li>
+        <li><a href="#contact" class="nav-link">Kontakt</a></li>
+      </ul>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-greeting">Hej, jeg er</div>
+          <h1 class="hero-title">
+            <span class="title-line">MrFaws</span>
+            <span class="title-line title-accent">DK</span>
+          </h1>
+          <p class="hero-description">
+            Webudvikler & designer med passion for at skabe
+            <span class="highlight">moderne</span>, 
+            <span class="highlight">interaktive</span> og 
+            <span class="highlight">brugervenlige</span> løsninger
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fas fa-rocket"></i>
+              Se mine projekter
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fas fa-envelope"></i>
+              Kontakt mig
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="profile-container">
+            <img src="https://avatars.githubusercontent.com/u/9919?s=200" alt="MrFawsDK Profil" class="profile-image">
+            <div class="profile-ring"></div>
+            <div class="profile-dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-indicator">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
+    </div>
+    <div class="hero-background">
+      <div class="bg-gradient"></div>
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Om mig</h2>
+        <p class="section-subtitle">Passion for kode og kreativitet</p>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            Jeg er en dedikeret webudvikler med over 5 års erfaring inden for frontend og backend udvikling. 
+            Min passion ligger i at omdanne kreative ideer til funktionelle, brugervenlige websites og applikationer.
+          </p>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class="fab fa-html5"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-js-square"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-react"></i>
+              <span>React</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-node-js"></i>
+              <span>Node.js</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-php"></i>
+              <span>PHP</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Projekter</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">År erfaring</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Tilfredshed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Mine Projekter</h2>
+        <p class="section-subtitle">En samling af mine bedste arbejder</p>
+      </div>
       <div class="projects-grid">
-        <div class="project-card">
-          <h3>Portfolio Universe</h3>
-          <p>Samling af forskellige portfolio-styles – fra terminal til timeline.</p>
-          <a href="#styles" class="project-btn">Se styles</a>
+        <div class="project-card featured">
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="#portfolio-styles" class="project-link">
+                <i class="fas fa-eye"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Portfolio</div>
+            <h3 class="project-title">Portfolio Universe</h3>
+            <p class="project-description">
+              En omfattende samling af forskellige portfolio-styles – fra terminal-interface til moderne timeline-design.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+          </div>
         </div>
+        
         <div class="project-card">
-          <h3>Blog Platform</h3>
-          <p>Moderne blog med dynamisk indhold og flot design.</p>
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="#" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Web App</div>
+            <h3 class="project-title">Blog Platform</h3>
+            <p class="project-description">
+              Moderne blog-platform med dynamisk indhold, kommentarsystem og responsivt design.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+            </div>
+          </div>
         </div>
+        
         <div class="project-card">
-          <h3>Spil & Webapps</h3>
-          <p>Interaktive spil og webapplikationer med JS og PHP.</p>
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="#" class="project-link">
+                <i class="fas fa-gamepad"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-category">Gaming</div>
+            <h3 class="project-title">Spil & Webapps</h3>
+            <p class="project-description">
+              Interaktive spil og webapplikationer udviklet med moderne JavaScript frameworks.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">Canvas API</span>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <section class="contact-section">
-      <h2>Kontakt</h2>
-      <p>Du kan kontakte mig på <a href="mailto:email@eksempel.dk">email@eksempel.dk</a></p>
-      <button class="cv-btn" onclick="window.open('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf')">Download CV</button>
-    </section>
-    <section class="styles-section" id="styles">
-      <h2>Portfolio Styles</h2>
+    </div>
+  </section>
+
+  <!-- Portfolio Styles Section -->
+  <section id="portfolio-styles" class="portfolio-styles">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Portfolio Styles</h2>
+        <p class="section-subtitle">Udforsk forskellige designtilgange</p>
+      </div>
       <div class="styles-grid">
-        <a href="terminal-style/index.html" class="style-link">Terminal</a>
-        <a href="os-desktop/index.html" class="style-link">Desktop</a>
-        <a href="timeline/index.html" class="style-link">Timeline</a>
-        <a href="card-grid/index.html" class="style-link">Card Grid</a>
-        <a href="storytelling/index.html" class="style-link">Storytelling</a>
-        <a href="minimal-dark-neon/index.html" class="style-link">VS Code Style</a>
+        <a href="terminal-style/index.html" class="style-card">
+          <div class="style-icon">
+            <i class="fas fa-terminal"></i>
+          </div>
+          <h3>Terminal Style</h3>
+          <p>Retro terminal-interface med kommandolinje-æstetik</p>
+        </a>
+        
+        <a href="os-desktop/index.html" class="style-card">
+          <div class="style-icon">
+            <i class="fas fa-desktop"></i>
+          </div>
+          <h3>Desktop OS</h3>
+          <p>Operativsystem-inspireret desktop-oplevelse</p>
+        </a>
+        
+        <a href="timeline/index.html" class="style-card">
+          <div class="style-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>Timeline</h3>
+          <p>Kronologisk præsentation af projekter og erfaring</p>
+        </a>
+        
+        <a href="card-grid/index.html" class="style-card">
+          <div class="style-icon">
+            <i class="fas fa-th-large"></i>
+          </div>
+          <h3>Card Grid</h3>
+          <p>Moderne card-layout med hover-effekter</p>
+        </a>
+        
+        <a href="storytelling/index.html" class="style-card">
+          <div class="style-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h3>Storytelling</h3>
+          <p>Narrativ tilgang til portfolio-præsentation</p>
+        </a>
+        
+        <a href="minimal-dark-neon/index.html" class="style-card">
+          <div class="style-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>VS Code Style</h3>
+          <p>Mørkt tema inspireret af kode-editorer</p>
+        </a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-info">
+          <h2 class="contact-title">Lad os arbejde sammen</h2>
+          <p class="contact-description">
+            Har du et spændende projekt eller en idé, du gerne vil realisere? 
+            Jeg er altid klar til nye udfordringer og samarbejder.
+          </p>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:contact@mrfawsdk.com">contact@mrfawsdk.com</a>
+              </div>
+            </div>
+            <div class="contact-method">
+              <i class="fab fa-github"></i>
+              <div>
+                <strong>GitHub</strong>
+                <a href="https://github.com/mrfawsdk" target="_blank">github.com/mrfawsdk</a>
+              </div>
+            </div>
+            <div class="contact-method">
+              <i class="fab fa-linkedin"></i>
+              <div>
+                <strong>LinkedIn</strong>
+                <a href="#" target="_blank">linkedin.com/in/mrfawsdk</a>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary cv-btn" onclick="window.open('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf')">
+            <i class="fas fa-download"></i>
+            Download CV
+          </button>
+        </div>
+        <div class="contact-form">
+          <form class="form">
+            <div class="form-group">
+              <input type="text" id="name" name="name" required>
+              <label for="name">Dit navn</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" required>
+              <label for="email">Din email</label>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <label for="message">Din besked</label>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i>
+              Send besked
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 MrFawsDK. Alle rettigheder forbeholdes.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
