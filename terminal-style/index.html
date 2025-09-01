@@ -2,16 +2,119 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8">
-  <title>Terminal Style Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MrFawsDK@terminal:~$ portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="terminal">
-  <div id="output">Velkommen til min portfolio!<br>Skriv <span class="cmd">about</span>, <span class="cmd">projects</span> eller <span class="cmd">contact</span>.<br><br><button id="cv-btn">Download CV (PDF)</button><br><br><div id="skills"><b>Skills:</b><br><div class="skill"><span>HTML</span><div class="bar" style="width:90%"></div></div><div class="skill"><span>CSS</span><div class="bar" style="width:80%"></div></div><div class="skill"><span>JS</span><div class="bar" style="width:75%"></div></div><div class="skill"><span>PHP</span><div class="bar" style="width:70%"></div></div></div></div>
-    <div class="input-line">
-      <span>&gt;</span> <input id="terminal-input" type="text" autofocus autocomplete="off">
+  <div class="terminal-window">
+    <div class="terminal-header">
+      <div class="terminal-controls">
+        <span class="control close"></span>
+        <span class="control minimize"></span>
+        <span class="control maximize"></span>
+      </div>
+      <div class="terminal-title">MrFawsDK@portfolio:~$</div>
+      <div class="terminal-menu">
+        <span class="menu-item">Shell</span>
+        <span class="menu-item">Edit</span>
+        <span class="menu-item">View</span>
+      </div>
+    </div>
+    
+    <div class="terminal-body">
+      <div class="boot-sequence" id="bootSequence">
+        <div class="boot-line">Starting portfolio system...</div>
+        <div class="boot-line">Loading user profile: MrFawsDK</div>
+        <div class="boot-line">Initializing projects database...</div>
+        <div class="boot-line">Setting up contact protocols...</div>
+        <div class="boot-line">System ready. Welcome!</div>
+      </div>
+      
+      <div class="terminal-content" id="terminalContent">
+        <div class="welcome-banner">
+          <pre class="ascii-art">
+ ███╗   ███╗██████╗ ███████╗ █████╗ ██╗    ██╗███████╗██████╗ ██╗  ██╗
+ ████╗ ████║██╔══██╗██╔════╝██╔══██╗██║    ██║██╔════╝██╔══██╗██║ ██╔╝
+ ██╔████╔██║██████╔╝█████╗  ███████║██║ █╗ ██║███████╗██║  ██║█████╔╝ 
+ ██║╚██╔╝██║██╔══██╗██╔══╝  ██╔══██║██║███╗██║╚════██║██║  ██║██╔═██╗ 
+ ██║ ╚═╝ ██║██║  ██║██║     ██║  ██║╚███╔███╔╝███████║██████╔╝██║  ██╗
+ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝╚═════╝ ╚═╝  ╚═╝
+          </pre>
+          <div class="system-info">
+            <div class="info-line">Portfolio OS v2.1.0 (Build 20250101)</div>
+            <div class="info-line">Kernel: WebDev 5.15.0-portfolio</div>
+            <div class="info-line">Uptime: <span id="uptime">0</span> seconds</div>
+            <div class="info-line">User: MrFawsDK (Web Developer)</div>
+            <div class="info-line">Shell: /bin/portfolio</div>
+          </div>
+        </div>
+        
+        <div class="command-output" id="commandOutput"></div>
+        
+        <div class="command-line">
+          <span class="prompt">
+            <span class="user">MrFawsDK</span><span class="at">@</span><span class="host">portfolio</span><span class="colon">:</span><span class="path">~</span><span class="dollar">$</span>
+          </span>
+          <input type="text" id="commandInput" class="command-input" autocomplete="off" spellcheck="false">
+          <span class="cursor" id="cursor">█</span>
+        </div>
+        
+        <div class="help-section">
+          <div class="help-title">Available Commands:</div>
+          <div class="command-list">
+            <div class="command-item">
+              <span class="cmd">help</span> - Show this help menu
+            </div>
+            <div class="command-item">
+              <span class="cmd">about</span> - Display information about me
+            </div>
+            <div class="command-item">
+              <span class="cmd">skills</span> - List my technical skills
+            </div>
+            <div class="command-item">
+              <span class="cmd">projects</span> - Show my projects
+            </div>
+            <div class="command-item">
+              <span class="cmd">contact</span> - Get my contact information
+            </div>
+            <div class="command-item">
+              <span class="cmd">resume</span> - Download my CV
+            </div>
+            <div class="command-item">
+              <span class="cmd">clear</span> - Clear the terminal
+            </div>
+            <div class="command-item">
+              <span class="cmd">matrix</span> - Enter the matrix (easter egg)
+            </div>
+            <div class="command-item">
+              <span class="cmd">exit</span> - Return to main portfolio
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="terminal-footer">
+      <div class="status-bar">
+        <span class="status-item">Connected</span>
+        <span class="status-item">UTF-8</span>
+        <span class="status-item">Line 1, Col <span id="cursorPos">1</span></span>
+        <span class="status-item">Portfolio Mode</span>
+      </div>
     </div>
   </div>
+  
+  <div class="matrix-overlay" id="matrixOverlay">
+    <canvas id="matrixCanvas"></canvas>
+    <div class="matrix-text">
+      <div>WAKE UP, NEO...</div>
+      <div>THE PORTFOLIO HAS YOU...</div>
+      <div>Press ESC to exit</div>
+    </div>
+  </div>
+  
   <script src="script.js"></script>
 </body>
 </html>

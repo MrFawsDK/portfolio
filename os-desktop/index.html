@@ -1,26 +1,244 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>OS/Desktop Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MrFawsDK OS - Desktop Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="desktop">
-    <div class="icon" onclick="openWindow('projects')">🗂 Projekter</div>
-    <div class="icon" onclick="openWindow('about')">👤 Om mig</div>
-    <div class="icon" onclick="openWindow('contact')">✉ Kontakt</div>
-    <div class="icon" onclick="openWindow('cv')">📄 Download CV</div>
-  </div>
-  <div id="windows"></div>
-  <script src="script.js"></script>
-  <div id="skills-bar">
-    <b>Skills:</b>
-    <div class="skill"><span>HTML</span><div class="bar" style="width:90%"></div></div>
-    <div class="skill"><span>CSS</span><div class="bar" style="width:80%"></div></div>
-    <div class="skill"><span>JS</span><div class="bar" style="width:75%"></div></div>
-    <div class="skill"><span>PHP</span><div class="bar" style="width:70%"></div></div>
-  </div>
-  <script src="script.js"></script>
+    <!-- Boot Screen -->
+    <div id="bootScreen" class="boot-screen active">
+        <div class="boot-logo">
+            <i class="fas fa-code"></i>
+            <h1>MrFawsDK OS</h1>
+        </div>
+        <div class="boot-progress">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="boot-text">Starting Portfolio System...</div>
+        </div>
+        <div class="boot-info">
+            <div>Version 2.0.1</div>
+            <div>Copyright © 2024 MrFawsDK</div>
+        </div>
+    </div>
+
+    <!-- Desktop Environment -->
+    <div id="desktop" class="desktop">
+        <!-- Desktop Wallpaper -->
+        <div class="wallpaper"></div>
+        
+        <!-- Desktop Icons -->
+        <div class="desktop-icons">
+            <div class="desktop-icon" data-app="about">
+                <div class="icon-image">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="icon-label">About Me</div>
+            </div>
+            
+            <div class="desktop-icon" data-app="projects">
+                <div class="icon-image">
+                    <i class="fas fa-folder"></i>
+                </div>
+                <div class="icon-label">Projects</div>
+            </div>
+            
+            <div class="desktop-icon" data-app="skills">
+                <div class="icon-image">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <div class="icon-label">Skills</div>
+            </div>
+            
+            <div class="desktop-icon" data-app="contact">
+                <div class="icon-image">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="icon-label">Contact</div>
+            </div>
+            
+            <div class="desktop-icon" data-app="resume">
+                <div class="icon-image">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="icon-label">Resume.pdf</div>
+            </div>
+            
+            <div class="desktop-icon" data-app="browser">
+                <div class="icon-image">
+                    <i class="fab fa-chrome"></i>
+                </div>
+                <div class="icon-label">Web Browser</div>
+            </div>
+            
+            <div class="desktop-icon" data-app="settings">
+                <div class="icon-image">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="icon-label">Settings</div>
+            </div>
+            
+            <div class="desktop-icon" data-app="trash" id="trashIcon">
+                <div class="icon-image">
+                    <i class="fas fa-trash"></i>
+                </div>
+                <div class="icon-label">Trash (Empty)</div>
+            </div>
+        </div>
+        
+        <!-- Windows Container -->
+        <div id="windowsContainer" class="windows-container"></div>
+        
+        <!-- Taskbar -->
+        <div class="taskbar">
+            <div class="taskbar-left">
+                <button class="start-button" id="startButton">
+                    <i class="fab fa-windows"></i>
+                    <span>Start</span>
+                </button>
+                <div class="taskbar-apps" id="taskbarApps"></div>
+            </div>
+            
+            <div class="taskbar-center">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search portfolio..." id="searchInput">
+                </div>
+            </div>
+            
+            <div class="taskbar-right">
+                <div class="system-tray">
+                    <div class="tray-icon" title="Network">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div class="tray-icon" title="Volume">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <div class="tray-icon" title="Battery">
+                        <i class="fas fa-battery-three-quarters"></i>
+                    </div>
+                </div>
+                <div class="clock" id="clock">
+                    <div class="time">12:00 PM</div>
+                    <div class="date">1/1/2024</div>
+                </div>
+                <button class="notification-button">
+                    <i class="fas fa-bell"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Start Menu -->
+        <div class="start-menu" id="startMenu">
+            <div class="start-menu-header">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <div class="username">MrFawsDK</div>
+                        <div class="user-title">Web Developer</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="start-menu-content">
+                <div class="menu-section">
+                    <div class="section-title">Portfolio</div>
+                    <div class="menu-items">
+                        <div class="menu-item" data-app="about">
+                            <i class="fas fa-user"></i>
+                            <span>About Me</span>
+                        </div>
+                        <div class="menu-item" data-app="projects">
+                            <i class="fas fa-folder"></i>
+                            <span>Projects</span>
+                        </div>
+                        <div class="menu-item" data-app="skills">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Skills</span>
+                        </div>
+                        <div class="menu-item" data-app="contact">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="section-title">Applications</div>
+                    <div class="menu-items">
+                        <div class="menu-item" data-app="browser">
+                            <i class="fab fa-chrome"></i>
+                            <span>Web Browser</span>
+                        </div>
+                        <div class="menu-item" data-app="calculator">
+                            <i class="fas fa-calculator"></i>
+                            <span>Calculator</span>
+                        </div>
+                        <div class="menu-item" data-app="notepad">
+                            <i class="fas fa-sticky-note"></i>
+                            <span>Notepad</span>
+                        </div>
+                        <div class="menu-item" data-app="file-manager">
+                            <i class="fas fa-folder-open"></i>
+                            <span>File Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="start-menu-footer">
+                <button class="power-button" id="powerButton">
+                    <i class="fas fa-power-off"></i>
+                    <span>Power</span>
+                </button>
+                <button class="settings-button" data-app="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Context Menu -->
+        <div class="context-menu" id="contextMenu">
+            <div class="context-item" data-action="refresh">
+                <i class="fas fa-sync"></i>
+                <span>Refresh</span>
+            </div>
+            <div class="context-item" data-action="personalize">
+                <i class="fas fa-palette"></i>
+                <span>Personalize</span>
+            </div>
+            <div class="context-separator"></div>
+            <div class="context-item" data-action="display">
+                <i class="fas fa-desktop"></i>
+                <span>Display Settings</span>
+            </div>
+        </div>
+        
+        <!-- Power Menu -->
+        <div class="power-menu" id="powerMenu">
+            <div class="power-option" data-action="restart">
+                <i class="fas fa-redo"></i>
+                <span>Restart</span>
+            </div>
+            <div class="power-option" data-action="shutdown">
+                <i class="fas fa-power-off"></i>
+                <span>Shut Down</span>
+            </div>
+            <div class="power-option" data-action="home">
+                <i class="fas fa-home"></i>
+                <span>Return to Main Portfolio</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
