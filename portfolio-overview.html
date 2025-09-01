@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Overview - Alle Styles</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .overview-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+    
+    .overview-nav-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .overview-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: var(--gradient-3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--gradient-1);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    }
+    
+    .overview-hero {
+      padding: 120px 0 60px 0;
+      text-align: center;
+      background: linear-gradient(135deg, var(--dark-bg) 0%, rgba(15, 15, 15, 0.8) 100%);
+    }
+    
+    .overview-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: var(--gradient-2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .overview-hero p {
+      font-size: 1.2rem;
+      color: #cccccc;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.6;
+    }
+    
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 3rem;
+      padding: 0 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .portfolio-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .portfolio-item:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow);
+      border-color: var(--primary-color);
+    }
+    
+    .portfolio-preview {
+      height: 250px;
+      background: #1a1a1a;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .portfolio-preview iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      transform: scale(0.8);
+      transform-origin: top left;
+      width: 125%;
+      height: 125%;
+    }
+    
+    .preview-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+    }
+    
+    .portfolio-item:hover .preview-overlay {
+      opacity: 1;
+    }
+    
+    .preview-actions {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .preview-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: var(--gradient-3);
+      border-radius: 50%;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+    
+    .preview-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+    }
+    
+    .portfolio-info {
+      padding: 2rem;
+    }
+    
+    .portfolio-category {
+      color: var(--accent-color);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .portfolio-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+    
+    .portfolio-description {
+      color: #cccccc;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    
+    .portfolio-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .feature-tag {
+      padding: 0.3rem 0.8rem;
+      background: rgba(255, 107, 107, 0.1);
+      color: var(--secondary-color);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: 15px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    
+    .portfolio-actions {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .action-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1rem;
+      background: var(--gradient-3);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 500;
+      transition: var(--transition);
+      text-align: center;
+    }
+    
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+    }
+    
+    .action-btn.secondary {
+      background: transparent;
+      border: 1px solid var(--border-color);
+    }
+    
+    .action-btn.secondary:hover {
+      background: var(--gradient-1);
+      border-color: transparent;
+    }
+    
+    .stats-section {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 4rem auto;
+      max-width: 1200px;
+      text-align: center;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .stat-box {
+      padding: 1.5rem;
+      background: rgba(0, 212, 255, 0.1);
+      border-radius: 15px;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: var(--gradient-3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .stat-label {
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+      }
+      
+      .overview-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .overview-nav-content {
+        padding: 0 1rem;
+      }
+      
+      .overview-title {
+        font-size: 1.2rem;
+      }
+      
+      .portfolio-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="overview-nav">
+    <div class="overview-nav-content">
+      <div class="overview-title">Portfolio Overview</div>
+      <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        Tilbage til forsiden
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="overview-hero">
+    <div class="container">
+      <h1>Alle Portfolio Styles</h1>
+      <p>
+        Udforsk alle 6 forskellige tilgange til portfolio-design. Hver style demonstrerer 
+        unikke designprincipper, tekniske implementeringer og brugeroplevelser.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <h2 class="section-title">Portfolio Universe Stats</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Unikke Styles</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Responsive</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Teknologier</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">Kreativitet</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section class="portfolio-section" style="padding: 4rem 0;">
+    <div class="portfolio-grid">
+      
+      <!-- Terminal Style -->
+      <div class="portfolio-item">
+        <div class="portfolio-preview">
+          <div style="width: 100%; height: 100%; background: #0c0c0c; display: flex; align-items: center; justify-content: center;">
+            <div style="color: #00ff00; font-family: 'Courier New', monospace; font-size: 14px;">
+              <div>$ whoami</div>
+              <div>MrFawsDK</div>
+              <div>$ ls -la projects/</div>
+              <div style="opacity: 0.7;">drwxr-xr-x portfolio/</div>
+              <div style="opacity: 0.7;">-rw-r--r-- resume.txt</div>
+              <div>$ _</div>
+            </div>
+          </div>
+          <div class="preview-overlay">
+            <div class="preview-actions">
+              <a href="terminal-style/index.html" target="_blank" class="preview-btn">
+                <i class="fas fa-eye"></i>
+              </a>
+              <a href="#terminal-info" class="preview-btn">
+                <i class="fas fa-info"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-category">Retro Design</div>
+          <h3 class="portfolio-title">Terminal Style</h3>
+          <p class="portfolio-description">
+            En nostalgisk rejse tilbage til kommandolinje-æraen. Komplet med grøn tekst, 
+            blinkende cursor og interaktive kommandoer der afslører portfolio-information.
+          </p>
+          <div class="portfolio-features">
+            <span class="feature-tag">Terminal Emulator</span>
+            <span class="feature-tag">CLI Interface</span>
+            <span class="feature-tag">Typewriter Effect</span>
+            <span class="feature-tag">Interactive Commands</span>
+          </div>
+          <div class="portfolio-actions">
+            <a href="terminal-style/index.html" target="_blank" class="action-btn">
+              <i class="fas fa-external-link-alt"></i>
+              Åbn Terminal
+            </a>
+            <a href="terminal-style/" class="action-btn secondary">
+              <i class="fas fa-code"></i>
+              Se Kode
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop OS Style -->
+      <div class="portfolio-item">
+        <div class="portfolio-preview">
+          <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #2d3748, #4a5568); display: flex; flex-direction: column;">
+            <div style="flex: 1; padding: 20px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; align-content: start;">
+              <div style="width: 40px; height: 40px; background: var(--gradient-3); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px;">📁</div>
+              <div style="width: 40px; height: 40px; background: var(--gradient-2); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px;">💻</div>
+              <div style="width: 40px; height: 40px; background: var(--gradient-1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px;">📄</div>
+            </div>
+            <div style="height: 30px; background: #1a202c; display: flex; align-items: center; padding: 0 10px; font-size: 12px; color: #cccccc;">
+              <div style="width: 20px; height: 20px; background: var(--gradient-3); border-radius: 4px; margin-right: 10px;"></div>
+              Portfolio OS
+            </div>
+          </div>
+          <div class="preview-overlay">
+            <div class="preview-actions">
+              <a href="os-desktop/index.html" target="_blank" class="preview-btn">
+                <i class="fas fa-eye"></i>
+              </a>
+              <a href="#desktop-info" class="preview-btn">
+                <i class="fas fa-info"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-category">UI/UX Design</div>
+          <h3 class="portfolio-title">Desktop OS</h3>
+          <p class="portfolio-description">
+            Et fuldt funktionelt desktop-operativsystem i browseren. Komplet med vinduer, 
+            ikoner, filsystem og applikationer der præsenterer portfolio-indhold.
+          </p>
+          <div class="portfolio-features">
+            <span class="feature-tag">Window Manager</span>
+            <span class="feature-tag">File System</span>
+            <span class="feature-tag">Drag & Drop</span>
+            <span class="feature-tag">Desktop Apps</span>
+          </div>
+          <div class="portfolio-actions">
+            <a href="os-desktop/index.html" target="_blank" class="action-btn">
+              <i class="fas fa-desktop"></i>
+              Åbn Desktop
+            </a>
+            <a href="os-desktop/" class="action-btn secondary">
+              <i class="fas fa-code"></i>
+              Se Kode
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Style -->
+      <div class="portfolio-item">
+        <div class="portfolio-preview">
+          <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1a1a2e, #16213e); display: flex; align-items: center; justify-content: center; position: relative;">
+            <div style="width: 3px; height: 80%; background: var(--gradient-3); position: relative;">
+              <div style="position: absolute; top: 20%; left: -8px; width: 18px; height: 18px; background: var(--accent-color); border-radius: 50%; border: 3px solid #1a1a2e;"></div>
+              <div style="position: absolute; top: 50%; left: -8px; width: 18px; height: 18px; background: var(--secondary-color); border-radius: 50%; border: 3px solid #1a1a2e;"></div>
+              <div style="position: absolute; top: 80%; left: -8px; width: 18px; height: 18px; background: var(--primary-color); border-radius: 50%; border: 3px solid #1a1a2e;"></div>
+            </div>
+            <div style="position: absolute; top: 15%; left: 60%; color: #cccccc; font-size: 10px;">
+              <div style="font-weight: bold;">2023</div>
+              <div style="opacity: 0.7;">Portfolio Launch</div>
+            </div>
+            <div style="position: absolute; top: 45%; right: 60%; color: #cccccc; font-size: 10px; text-align: right;">
+              <div style="font-weight: bold;">2024</div>
+              <div style="opacity: 0.7;">Major Updates</div>
+            </div>
+          </div>
+          <div class="preview-overlay">
+            <div class="preview-actions">
+              <a href="timeline/index.html" target="_blank" class="preview-btn">
+                <i class="fas fa-eye"></i>
+              </a>
+              <a href="#timeline-info" class="preview-btn">
+                <i class="fas fa-info"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-category">Storytelling</div>
+          <h3 class="portfolio-title">Timeline</h3>
+          <p class="portfolio-description">
+            En kronologisk rejse gennem karrieren. Interaktiv timeline der viser 
+            projekter, milepæle og professionel udvikling gennem tiden.
+          </p>
+          <div class="portfolio-features">
+            <span class="feature-tag">Chronological</span>
+            <span class="feature-tag">Interactive Timeline</span>
+            <span class="feature-tag">Smooth Scrolling</span>
+            <span class="feature-tag">Milestone Markers</span>
+          </div>
+          <div class="portfolio-actions">
+            <a href="timeline/index.html" target="_blank" class="action-btn">
+              <i class="fas fa-clock"></i>
+              Se Timeline
+            </a>
+            <a href="timeline/" class="action-btn secondary">
+              <i class="fas fa-code"></i>
+              Se Kode
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Grid Style -->
+      <div class="portfolio-item">
+        <div class="portfolio-preview">
+          <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #0d1421, #1a1a2e); padding: 20px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+            <div style="background: var(--gradient-1); border-radius: 10px; padding: 15px; color: white;">
+              <div style="font-size: 10px; font-weight: bold; margin-bottom: 5px;">Project 1</div>
+              <div style="font-size: 8px; opacity: 0.8;">Web Application</div>
+            </div>
+            <div style="background: var(--gradient-2); border-radius: 10px; padding: 15px; color: white;">
+              <div style="font-size: 10px; font-weight: bold; margin-bottom: 5px;">Project 2</div>
+              <div style="font-size: 8px; opacity: 0.8;">Mobile App</div>
+            </div>
+            <div style="background: var(--gradient-3); border-radius: 10px; padding: 15px; color: white;">
+              <div style="font-size: 10px; font-weight: bold; margin-bottom: 5px;">Project 3</div>
+              <div style="font-size: 8px; opacity: 0.8;">Desktop Software</div>
+            </div>
+            <div style="background: linear-gradient(135deg, #4facfe, #00f2fe); border-radius: 10px; padding: 15px; color: white;">
+              <div style="font-size: 10px; font-weight: bold; margin-bottom: 5px;">Project 4</div>
+              <div style="font-size: 8px; opacity: 0.8;">API Development</div>
+            </div>
+          </div>
+          <div class="preview-overlay">
+            <div class="preview-actions">
+              <a href="card-grid/index.html" target="_blank" class="preview-btn">
+                <i class="fas fa-eye"></i>
+              </a>
+              <a href="#card-info" class="preview-btn">
+                <i class="fas fa-info"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-category">Modern Design</div>
+          <h3 class="portfolio-title">Card Grid</h3>
+          <p class="portfolio-description">
+            Moderne kort-baseret layout med hover-effekter og responsivt grid. 
+            Perfekt til at vise projekter med visuelle previews og kategorisering.
+          </p>
+          <div class="portfolio-features">
+            <span class="feature-tag">CSS Grid</span>
+            <span class="feature-tag">Hover Effects</span>
+            <span class="feature-tag">Responsive</span>
+            <span class="feature-tag">Category Filters</span>
+          </div>
+          <div class="portfolio-actions">
+            <a href="card-grid/index.html" target="_blank" class="action-btn">
+              <i class="fas fa-th-large"></i>
+              Se Grid
+            </a>
+            <a href="card-grid/" class="action-btn secondary">
+              <i class="fas fa-code"></i>
+              Se Kode
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Storytelling Style -->
+      <div class="portfolio-item">
+        <div class="portfolio-preview">
+          <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #2c1810, #4a2c17); display: flex; align-items: center; justify-content: center;">
+            <div style="width: 80%; height: 80%; background: #f5f5dc; border-radius: 8px; padding: 20px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+              <div style="font-family: 'Times New Roman', serif; color: #2c1810;">
+                <div style="font-size: 12px; font-weight: bold; margin-bottom: 10px; text-align: center; border-bottom: 1px solid #2c1810; padding-bottom: 5px;">Chapter 1</div>
+                <div style="font-size: 8px; line-height: 1.4; text-align: justify;">
+                  <div style="margin-bottom: 3px;">Det begyndte alt sammen med en passion for kode...</div>
+                  <div style="margin-bottom: 3px;">Fra de første linjer HTML til komplekse...</div>
+                  <div style="opacity: 0.6;">webapplikationer, hver linje kode fortæller...</div>
+                </div>
+              </div>
+              <div style="position: absolute; bottom: 10px; right: 15px; font-size: 8px; color: #666;">Side 1</div>
+            </div>
+          </div>
+          <div class="preview-overlay">
+            <div class="preview-actions">
+              <a href="storytelling/index.html" target="_blank" class="preview-btn">
+                <i class="fas fa-eye"></i>
+              </a>
+              <a href="#story-info" class="preview-btn">
+                <i class="fas fa-info"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-category">Creative Writing</div>
+          <h3 class="portfolio-title">Storytelling</h3>
+          <p class="portfolio-description">
+            En narrativ tilgang til portfolio-præsentation. Fortæller historien om 
+            den professionelle rejse gennem kapitler, karakterer og plot-udvikling.
+          </p>
+          <div class="portfolio-features">
+            <span class="feature-tag">Narrative Structure</span>
+            <span class="feature-tag">Chapter System</span>
+            <span class="feature-tag">Character Development</span>
+            <span class="feature-tag">Interactive Story</span>
+          </div>
+          <div class="portfolio-actions">
+            <a href="storytelling/index.html" target="_blank" class="action-btn">
+              <i class="fas fa-book-open"></i>
+              Læs Historie
+            </a>
+            <a href="storytelling/" class="action-btn secondary">
+              <i class="fas fa-code"></i>
+              Se Kode
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- VS Code Style -->
+      <div class="portfolio-item">
+        <div class="portfolio-preview">
+          <div style="width: 100%; height: 100%; background: #1e1e1e; display: flex;">
+            <div style="width: 30%; background: #252526; padding: 10px;">
+              <div style="font-size: 8px; color: #cccccc; margin-bottom: 5px;">EXPLORER</div>
+              <div style="font-size: 7px; color: #569cd6; margin-left: 5px;">📁 src/</div>
+              <div style="font-size: 7px; color: #cccccc; margin-left: 15px;">📄 index.html</div>
+              <div style="font-size: 7px; color: #cccccc; margin-left: 15px;">📄 style.css</div>
+              <div style="font-size: 7px; color: #cccccc; margin-left: 15px;">📄 script.js</div>
+            </div>
+            <div style="flex: 1; padding: 10px; font-family: 'Courier New', monospace; font-size: 8px;">
+              <div style="background: #2d2d30; padding: 5px; margin-bottom: 5px; border-radius: 3px;">
+                <span style="color: #569cd6;">index.html</span>
+              </div>
+              <div style="color: #808080;">&lt;!-- Portfolio Code --&gt;</div>
+              <div><span style="color: #569cd6;">&lt;div</span> <span style="color: #92c5f8;">class</span>=<span style="color: #ce9178;">"portfolio"</span><span style="color: #569cd6;">&gt;</span></div>
+              <div style="margin-left: 10px;"><span style="color: #569cd6;">&lt;h1&gt;</span><span style="color: #cccccc;">MrFawsDK</span><span style="color: #569cd6;">&lt;/h1&gt;</span></div>
+              <div><span style="color: #569cd6;">&lt;/div&gt;</span></div>
+            </div>
+          </div>
+          <div class="preview-overlay">
+            <div class="preview-actions">
+              <a href="minimal-dark-neon/index.html" target="_blank" class="preview-btn">
+                <i class="fas fa-eye"></i>
+              </a>
+              <a href="#vscode-info" class="preview-btn">
+                <i class="fas fa-info"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-category">Developer Theme</div>
+          <h3 class="portfolio-title">VS Code Style</h3>
+          <p class="portfolio-description">
+            En mørk, minimalistisk tilgang inspireret af Visual Studio Code. 
+            Perfekt for udviklere der ønsker et familiar interface med neon-accenter.
+          </p>
+          <div class="portfolio-features">
+            <span class="feature-tag">Dark Theme</span>
+            <span class="feature-tag">Code Highlighting</span>
+            <span class="feature-tag">Neon Effects</span>
+            <span class="feature-tag">Developer UX</span>
+          </div>
+          <div class="portfolio-actions">
+            <a href="minimal-dark-neon/index.html" target="_blank" class="action-btn">
+              <i class="fas fa-code"></i>
+              Åbn Editor
+            </a>
+            <a href="minimal-dark-neon/" class="action-btn secondary">
+              <i class="fas fa-code"></i>
+              Se Kode
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section style="padding: 4rem 0; text-align: center; background: var(--card-bg);">
+    <div class="container">
+      <h2 class="section-title">Klar til at udforske?</h2>
+      <p style="font-size: 1.1rem; color: #cccccc; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Hver portfolio-style tilbyder en unik oplevelse og demonstrerer forskellige designprincipper. 
+        Vælg den der passer bedst til din stil, eller udforsk dem alle!
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="index.html" class="btn btn-secondary">
+          <i class="fas fa-home"></i>
+          Tilbage til forsiden
+        </a>
+        <a href="mailto:contact@mrfawsdk.com" class="btn btn-primary">
+          <i class="fas fa-envelope"></i>
+          Kontakt mig
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Add smooth scrolling and interactions
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animate stats on scroll
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.portfolio-item').forEach(item => {
+        observer.observe(item);
+      });
+      
+      // Add hover effects to portfolio items
+      document.querySelectorAll('.portfolio-item').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px) rotateX(2deg)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) rotateX(0)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
